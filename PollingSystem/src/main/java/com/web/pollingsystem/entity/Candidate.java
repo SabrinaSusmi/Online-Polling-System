@@ -1,14 +1,23 @@
 package com.web.pollingsystem.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name="user", schema ="public")
-public class User {
-	
+@Table(name="candidate", schema ="public")
+public class Candidate {
+	public Candidate(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
+	public Candidate() {
+		super();
+	}
+
 	@Id
 	@Column(name="id")
 	private Long id;
@@ -31,17 +40,4 @@ public class User {
 	protected void setName(String name) {
 		this.name = name;
 	}
-
-	public User(Long id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-
-	public User() {
-		super();
-	}
-	
-	
-
 }
